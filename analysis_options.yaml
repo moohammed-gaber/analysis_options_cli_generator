@@ -1,21 +1,3 @@
-import 'package:analysis_options_cli_generator/src/custom_analysis_options.dart';
-
-//    prefer_final_pub global activate parameters: true
-class AnalysisOptions {
-  static const fileName = 'analysis_options.yaml';
-
-  //<editor-fold desc="File Content">
-  static const analyzerFileContent = '''
-  
-analyzer:
-  exclude:
-    - "**/*.g.dart"
-    - "**/*.freezed.dart"
-    - "**/injection_container.config.dart"
-  errors:
-    invalid_annotation_target: ignore
-    ''';
-  static const linterFileContent = '''
 include: package:flutter_lints/flutter.yaml
 linter:
   rules:
@@ -118,11 +100,17 @@ linter:
     avoid_returning_null_for_void: true
     avoid_returning_this: true
     prefer_single_quotes: true
-''';
-
-//</editor-fold>
-
-  static String fileContent(CustomAnalysisOptions customAnalysisOptions) =>
-      '''$linterFileContent${customAnalysisOptions.toAnalysisOptionsFormat}$analyzerFileContent
-  ''';
-}
+    avoid_print: true
+    sort_pub_dependencies: false
+    sort_constructors_first: false
+    prefer_expression_function_bodies: true
+          
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/injection_container.config.dart"
+  errors:
+    invalid_annotation_target: ignore
+    
+  

@@ -1,10 +1,7 @@
 #! /usr/bin/env dcli
 
-import 'dart:io';
-
 import 'package:analysis_options_cli_generator/src/analysis_options.dart';
 import 'package:analysis_options_cli_generator/src/custom_analysis_options.dart';
-import 'package:args/args.dart';
 
 // ignore: prefer_relative_imports
 import 'package:dcli/dcli.dart';

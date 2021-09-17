@@ -1,6 +1,7 @@
 name: analysis_options_cli_generator
 version: 1.0.4
 description: A CLI tool for generating best collection of analysis options rules.
+repository: https://github.com/MoGaaber/analysis_options_cli_generator
 
 dependencies:
   dcli: ^1.8.2

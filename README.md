@@ -14,9 +14,10 @@ dart pub global activate analysis_options_cli_generator
 ```shell
   aog
 ```
+to run any dart script you need to add _/.pub-cache/bin_ to your path, you may need also _$FLUTTER_HOME/bin/cache/dart-sdk/bin_ _FLUTTER_HOME/.pub-cache/bin_
+
 ![alt text](https://github.com/MoGaaber/analysis_options_cli_generator/blob/master/assets/sample.gif?raw=true)
 
-to run any dart script you need to add _/.pub-cache/bin_ to your path, you may need also _$FLUTTER_HOME/bin/cache/dart-sdk/bin_ _FLUTTER_HOME/.pub-cache/bin_
 ##### This command will give you two options :-
 ##### - _Basic_: default rules
 ##### - _Custom_: make you choose whether you want to enable these 4 rules or not

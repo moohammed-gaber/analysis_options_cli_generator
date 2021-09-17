@@ -1,17 +1,11 @@
 #! /usr/bin/env dcli
 
 // ignore: prefer_relative_imports
-import 'dart:io';
-import 'package:analysis_options_cli_generator/src/flutter_lints_pub_client.dart';
 import 'package:analysis_options_cli_generator/src/pubspec.dart';
-import 'package:plain_optional/plain_optional.dart';
-import 'package:pub_api_client/pub_api_client.dart';
-import 'package:pubspec_yaml/pubspec_yaml.dart';
 
 import 'package:analysis_options_cli_generator/src/analysis_options.dart';
 import 'package:analysis_options_cli_generator/src/custom_analysis_options.dart';
 import 'package:dcli/dcli.dart';
-import 'package:yaml/yaml.dart';
 
 //Avoid defining a class that contains only static members
 void main(List<String> args) async {
@@ -23,28 +17,32 @@ void main(List<String> args) async {
   final bool isAvoidPrintEnabled,
       isSortPubEnabled,
       isSortConstructorsFirstEnabled,
-      isPreferExpressionFunctionBodiesEnabled;
+      isPreferExpressionBodiesEnabled;
   final isCustomSelected = result == custom;
   if (isCustomSelected) {
     isAvoidPrintEnabled = confirm('Avoid print', defaultValue: false);
     isSortPubEnabled = confirm('Sort pub dependencies', defaultValue: false);
     isSortConstructorsFirstEnabled =
         confirm('Sort constructors first', defaultValue: false);
-    isPreferExpressionFunctionBodiesEnabled =
+    isPreferExpressionBodiesEnabled =
         confirm('Prefer expression function bodies', defaultValue: false);
   } else {
     isAvoidPrintEnabled = false;
     isSortPubEnabled = false;
     isSortConstructorsFirstEnabled = false;
-    isPreferExpressionFunctionBodiesEnabled = false;
+    isPreferExpressionBodiesEnabled = false;
   }
 
-  AnalysisOptions.fileName.write(AnalysisOptions.fileContent(
+  AnalysisOptions.fileName.write(
+    AnalysisOptions.fileContent(
       CustomAnalysisOptions(
-          isAvoidPrintEnabled,
-          isSortPubEnabled,
-          isSortConstructorsFirstEnabled,
-          isPreferExpressionFunctionBodiesEnabled)));
+        isAvoidPrintEnabled: isAvoidPrintEnabled,
+        isSortPubEnabled: isSortPubEnabled,
+        isSortConstructorsFirstEnabled: isSortConstructorsFirstEnabled,
+        isPreferExpressionBodiesEnabled: isPreferExpressionBodiesEnabled,
+      ),
+    ),
+  );
 
   await Pubspec.updateFile();
 }

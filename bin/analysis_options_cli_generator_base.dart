@@ -1,9 +1,8 @@
 #! /usr/bin/env dcli
 
+// ignore: prefer_relative_imports
 import 'package:analysis_options_cli_generator/src/analysis_options.dart';
 import 'package:analysis_options_cli_generator/src/custom_analysis_options.dart';
-
-// ignore: prefer_relative_imports
 import 'package:dcli/dcli.dart';
 
 void main(List<String> args) {
@@ -32,6 +31,7 @@ void main(List<String> args) {
     isSortConstructorsFirstEnabled = false;
     isPreferExpressionFunctionBodiesEnabled = false;
   }
+
   AnalysisOptions.fileName.write(AnalysisOptions.fileContent(
       CustomAnalysisOptions(
           isAvoidPrintEnabled,

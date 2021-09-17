@@ -6,12 +6,11 @@ dependencies:
   dcli: ^1.8.2
   plain_optional: ^1.0.0
   process_run: ^0.12.2
-  pub_api_client: ^2.1.1
+  pub_api_client: ^2.1.0
   pubspec_yaml: ^3.0.0
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^1.0.4
-#  flutter_lints: ^1.0.4
 
 environment:
   sdk: ">=2.14.0 <3.0.0"

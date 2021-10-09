@@ -1,3 +1,5 @@
+[![Pub](https://img.shields.io/pub/v/fab_circular_menu.svg)](https://pub.dev/packages/analysis_options_cli_generator)
+
 ### What will this tool do for me?
 
 **1- Generate analysis_options.yaml file for you which includes the best 100 analysis rules over there, with

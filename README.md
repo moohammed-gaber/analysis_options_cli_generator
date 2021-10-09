@@ -1,4 +1,4 @@
-[![Pub](https://img.shields.io/pub/v/fab_circular_menu.svg)](https://pub.dev/packages/analysis_options_cli_generator)
+[![Pub](https://img.shields.io/pub/v/analysis_options_cli_generator.svg)](https://pub.dev/packages/analysis_options_cli_generator)
 
 ### What will this tool do for me?
 
